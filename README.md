@@ -91,11 +91,6 @@ There are a couple of ways you can improve how a car is found and removed from t
 * If you're feeling brave you can override the default Object.equals() method from within the Car class. That method takes an `Object` argument, so you would need to first cast it to a car then do your comparison.
 * Display an id for each car in the view car list. Something like index number could work well here. Instead of asking the user for make/model/year, ask them instead for the id of the car to remove.
 
-&nbsp;
-
-&nbsp;  
-&nbsp;
-
 ## Part 3 - Saving to Files
 ### Part 3.1 - Create a FileManager class
 _Create a class to handle checking if there is an inventory file already, to read from that file, and to save to the file at the end of the program_
@@ -123,15 +118,7 @@ Create two methods:
 This is a private helper method which won't have any file interaction. It will simply take the car it is given, and convert that to a string which can be written into the file. A common storage method is csv, or Comma Separated Values.  
 We will concatenate all the properties of the car together, separated with a single comma between each. Then include a single newline character at the end of the string.
 
-For example:
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;  
-&nbsp;
-
+For example:  
 ```js
 Car {
     make: "Toyota",
@@ -164,8 +151,6 @@ Then the scanner has a `hasNextLine` method which will tell us if we are at the 
 
 Don't forget to close the file once we have finished reading all the lines from it.  
 Once we've finished reading the file, we should have a completed list of all the cars we read from it.
-
-&nbsp;
 
 ### 3.5 - Using FileManager to get inventory on startup
 _Once we've created the class for managing our inventory file. We need to use it to see if we have an inventory file, and read inventory from the file at the beginning of the program._
@@ -273,11 +258,6 @@ Once the list is shown, ask the user to enter which dealership they would like t
 Once we've created a DealershipManager object we can call the `dealershipMenu()` method from it. That will show the old menu from before and it will handle updating the dealership we gave to the manager on the previous line.
 
 ![Switching menus](images/manage_dealership.png)
-
-&nbsp;  
-
-&nbsp;  
-&nbsp;
 
 ### Update the File Manager
 _The file manager still only works for a single dealership. There are a couple of ways we can store multiple dealerships, for this assignment we are going to store everything in the same file. The first line in the file will have a dealership's location. Then the following lines will have the cars at that location. We can have an empty line between dealerships so when we see an empty line we know the next line will be dealership location again followed by more cars._
